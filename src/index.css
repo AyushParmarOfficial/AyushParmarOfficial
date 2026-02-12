@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme Colors */
+  --color-primary: #3b82f6;
+  /* Blue-500 */
+  --color-secondary: #ec4899;
+  /* Pink-500 */
+  --color-background: #ffffff;
+  --color-surface: #f3f4f6;
+  /* Gray-100 */
+  --color-text: #111827;
+  /* Gray-900 */
+  --color-text-muted: #6b7280;
+  /* Gray-500 */
+}
+
+.dark {
+  /* Dark Theme Colors */
+  --color-primary: #f97316;
+  /* Orange-500 */
+  --color-secondary: #f43f5e;
+  /* Rose-500 */
+  --color-background: #000000;
+  --color-surface: #1f2937;
+  /* Gray-800 */
+  --color-text: #f9fafb;
+  /* Gray-50 */
+  --color-text-muted: #9ca3af;
+  /* Gray-400 */
+}
+
+@theme {
+  --color-theme-primary: var(--color-primary);
+  --color-theme-secondary: var(--color-secondary);
+  --color-theme-background: var(--color-background);
+  --color-theme-surface: var(--color-surface);
+  --color-theme-text: var(--color-text);
+  --color-theme-muted: var(--color-text-muted);
+
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-tilt: tilt 10s infinite linear;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes tilt {
+
+    0%,
+    50%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(1deg);
+    }
+
+    75% {
+      transform: rotate(-1deg);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-theme-background text-theme-text transition-colors duration-300 font-sans;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Hide everything by default */
+  header,
+  footer,
+  section {
+    display: none !important;
+  }
+
+  /* Only show the resume section */
+  #resume {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+    z-index: 9999;
+  }
+
+  /* Ensure the container inside resume is visible */
+  #resume .container,
+  #resume .resume-content {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide specific interactive elements inside resume */
+  .no-print {
+    display: none !important;
+  }
+}
