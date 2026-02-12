@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Parmar - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                border: none;
+                padding: 10mm !important;
+            }
+
+            /* Ensure it fits on one page by adjusting spacing strictly for print */
+            h1 {
+                font-size: 2.5rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            h3 {
+                margin-bottom: 0.25rem !important;
+                padding-bottom: 0 !important;
+                border-bottom-width: 1px !important;
+            }
+
+            p,
+            li,
+            span,
+            div {
+                line-height: 1.3 !important;
+            }
+
+            section {
+                margin-top: 0.5rem !important;
+            }
+
+            .space-y-8> :not([hidden])~ :not([hidden]) {
+                --tw-space-y-reverse: 0;
+                margin-top: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            li {
+                margin-bottom: 0.1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4 print:p-0 print:bg-white text-gray-900">
+
+    <!-- Print Button (Hidden in Print) -->
+    <div class="no-print mb-6 fixed top-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-all hover:-translate-y-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download / Print as PDF
+        </button>
+    </div>
+
+    <!-- Resume Page -->
+    <div
+        class="page w-full max-w-[210mm] bg-white text-black p-8 md:p-10 shadow-2xl print:shadow-none print:p-8 mx-auto text-sm leading-tight">
+
+        <!-- Header -->
+        <header
+            class="border-b-2 border-black pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 print:flex-row">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold text-black uppercase tracking-wide mb-0">Ayush Parmar</h1>
+                <p class="text-lg text-gray-700 font-medium tracking-widest uppercase mt-1">Web Developer</p>
+            </div>
+            <div class="text-right text-gray-900 text-xs space-y-0.5 print:text-right">
+                <p>Surat, Gujarat, India</p>
+                <p>ayushparmar857@gmail.com</p>
+                <p>+91 81407 06086</p>
+                <div class="flex gap-2 justify-end mt-1 text-gray-800 font-semibold">
+                    <a href="https://www.linkedin.com/in/ayush-parmar-web-developer/" target="_blank" class="hover:underline">LinkedIn</a>
+                    <span>|</span>
+                    <a href="https://github.com/AyushParmarOfficial" target="_blank" class="hover:underline">GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 print:grid-cols-12">
+
+            <!-- Left Column (Main) -->
+            <div class="md:col-span-8 print:col-span-8 flex flex-col gap-5">
+
+                <!-- Summary -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-2 flex items-center gap-2">
+                        Professional Summary
+                    </h3>
+                    <p class="text-gray-900 leading-normal text-justify text-sm">
+                        Motivated and detail-oriented Web Developer with hands-on experience in building responsive,
+                        user-friendly websites and applications using ReactJS, Laravel, and PHP. Proven ability to
+                        collaborate in team environments, solve complex problems, and learn new technologies quickly.
+                        Eager to contribute to innovative projects and drive business success.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-3 flex items-center gap-2">
+                        Experience
+                    </h3>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between items-baseline mb-0.5">
+                            <h4 class="font-bold text-base text-black">Web Developer Intern</h4>
+                            <span class="text-xs font-semibold text-gray-900 italic">6 Months</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <p class="text-gray-800 font-medium text-sm">Monarchy Infotech</p>
+                            <p class="text-[10px] text-gray-600 uppercase">Surat, India</p>
+                        </div>
+                        <ul
+                            class="list-disc list-outside ml-4 text-gray-900 space-y-0.5 text-sm text-justify leading-snug">
+                            <li>Developed and maintained full-stack web applications using Laravel (PHP) and MySQL,
+                                ensuring robust backend performance.</li>
+                            <li>Implemented responsive frontend interfaces with ReactJS, HTML5, and Tailwind CSS,
+                                improving user experience across devices.</li>
+                            <li>Collaborated with cross-functional teams to troubleshoot bugs, optimize application
+                                performance, and deploy updates.</li>
+                            <li>Participated in code reviews and adopted agile methodologies for efficient project
+                                delivery and code quality.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-3 flex items-center gap-2">
+                        Key Projects
+                    </h3>
+
+                    <div>
+                        <h4 class="font-bold text-black text-sm">Personal Portfolio Website</h4>
+                        <p class="text-xs text-gray-700 mb-0.5 font-semibold">Technologies: ReactJS, Tailwind CSS,
+                            Framer
+                            Motion</p>
+                        <p class="text-sm text-gray-900 text-justify leading-snug">
+                            Designed and developed a modern, responsive portfolio with dark mode, smooth animations, and
+                            a clean UI. Implemented a fully functional contact form and dynamic content loading.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column (Side) -->
+            <div class="md:col-span-4 print:col-span-4 flex flex-col gap-5">
+
+                <!-- Education -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-2 flex items-center gap-2">
+                        Education
+                    </h3>
+                    <div>
+                        <h4 class="font-bold text-black text-sm">Bachelor of Computer Applications</h4>
+                        <p class="text-gray-800 font-medium text-xs">VNSGU University</p>
+                        <p class="text-[10px] text-gray-600 mb-0.5">Surat, Gujarat</p>
+                        <p class="text-xs text-gray-800">Graduated: 2025</p>
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-2 flex items-center gap-2">
+                        Technical Skills
+                    </h3>
+
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <p class="font-bold text-black mb-0.5">Frontend</p>
+                            <p class="text-gray-900 leading-tight">ReactJS, HTML5, CSS3, Tailwind CSS, Bootstrap, JS
+                                (ES6+)</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-black mb-0.5">Backend</p>
+                            <p class="text-gray-900 leading-tight">PHP, Laravel</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-black mb-0.5">Database</p>
+                            <p class="text-gray-900 leading-tight">MySQL, MongoDB, Firebase</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-black mb-0.5">Tools</p>
+                            <p class="text-gray-900 leading-tight">Git, GitHub, Postman, VS Code, XAMPP</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Soft Skills -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-2 flex items-center gap-2">
+                        Soft Skills
+                    </h3>
+                    <ul class="text-xs text-gray-900 space-y-0.5 list-disc list-inside leading-tight">
+                        <li>Problem Solving</li>
+                        <li>Agile Methodology</li>
+                        <li>Effective Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Time Management</li>
+                    </ul>
+                </section>
+
+                <!-- Languages -->
+                <section>
+                    <h3
+                        class="text-base font-bold text-black uppercase border-b border-gray-400 pb-0.5 mb-2 flex items-center gap-2">
+                        Languages
+                    </h3>
+                    <ul class="text-xs text-gray-900 space-y-0.5 list-disc list-inside leading-tight">
+                        <li>English (Professional)</li>
+                        <li>Hindi (Native)</li>
+                        <li>Gujarati (Native)</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
