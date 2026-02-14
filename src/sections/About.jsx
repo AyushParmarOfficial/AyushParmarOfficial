@@ -28,6 +28,10 @@ const About = () => {
                                 <img
                                     src="/ayush.jpg"
                                     alt="Ayush Parmar - Web Developer"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="500"
+                                    height="500"
                                     className="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 aspect-square"
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white">

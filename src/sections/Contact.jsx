@@ -76,17 +76,17 @@ const Contact = () => {
                             </div>
                             <h3 className="text-2xl font-bold text-theme-text mb-2">Chat on WhatsApp</h3>
                             <p className="text-theme-muted max-w-sm mx-auto">
-                                The fastest way to reach me. Click below to start a direct chat on WhatsApp Web.
+                                The fastest way to reach me. Click below to start a direct chat.
                             </p>
                         </div>
 
                         <a
-                            href="https://web.whatsapp.com/send?phone=918140706086" 
+                            href="https://wa.me/918140706086"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full max-w-xs py-4 bg-[#25D366] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.05] transform transition-all duration-300 flex items-center justify-center gap-3 text-lg"
                         >
-                            <FiMessageCircle size={24} /> Open WhatsApp
+                            <FiMessageCircle size={24} /> Chat on WhatsApp
                         </a>
 
                         <p className="text-xs text-theme-muted">

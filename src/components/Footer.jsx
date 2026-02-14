@@ -25,7 +25,7 @@ const Footer = () => {
                         <FiLinkedin size={24} />
                     </a>
                     <a
-                        href="https://www.instagram.com/ayushparmar0856/"
+                        href="https://www.instagram.com/ayushparmar0856?igsh=dzl0MjQxbTlvYzB0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-theme-muted hover:text-theme-secondary transition-colors hover:scale-110 transform duration-300"

@@ -57,12 +57,22 @@ const Skills = () => {
     const [activeCategory, setActiveCategory] = useState(categories[0].id);
     const categoryRefs = useRef({});
 
+    const tabsContainerRef = useRef(null);
+
     useEffect(() => {
-        if (categoryRefs.current[activeCategory]) {
-            categoryRefs.current[activeCategory].scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
+        const container = tabsContainerRef.current;
+        const activeTab = categoryRefs.current[activeCategory];
+
+        if (container && activeTab) {
+            const { offsetLeft, offsetWidth } = activeTab;
+            const { offsetWidth: containerWidth } = container;
+
+            // Calculate center position relative to the container
+            const scrollLeft = offsetLeft - (containerWidth / 2) + (offsetWidth / 2);
+
+            container.scrollTo({
+                left: scrollLeft,
+                behavior: 'smooth'
             });
         }
     }, [activeCategory]);
@@ -88,12 +98,18 @@ const Skills = () => {
 
                 <div className="flex flex-col md:flex-row gap-6 lg:gap-12 max-w-6xl mx-auto">
                     {/* Mobile: Horizontal Scrollable Tabs */}
-                    <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide flex gap-3 snap-x">
+                    <div
+                        ref={tabsContainerRef}
+                        className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide flex gap-3 snap-x"
+                    >
                         {categories.map((category) => (
                             <button
                                 key={category.id}
                                 ref={(el) => (categoryRefs.current[category.id] = el)}
                                 onClick={() => setActiveCategory(category.id)}
+                                role="tab"
+                                aria-selected={activeCategory === category.id}
+                                aria-controls={`panel-${category.id}`}
                                 className={`snap-center flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap border ${activeCategory === category.id
                                     ? 'bg-theme-primary text-white border-theme-primary shadow-md scale-105'
                                     : 'bg-theme-surface text-theme-muted border-theme-surface/50'
@@ -124,7 +140,7 @@ const Skills = () => {
                     </div>
 
                     {/* Main Content (Skills Grid) */}
-                    <div className="w-full md:w-3/4 lg:w-4/5 bg-theme-surface/30 rounded-2xl p-6 md:p-8 min-h-[400px] relative border border-theme-surface/50 backdrop-blur-sm">
+                    <div className="w-full md:w-3/4 lg:w-4/5 bg-theme-surface/30 rounded-2xl p-6 md:p-8 min-h-[300px] md:min-h-[400px] relative border border-theme-surface/50 backdrop-blur-sm">
                         <AnimatePresence mode='wait'>
                             <motion.div
                                 key={activeCategory}
